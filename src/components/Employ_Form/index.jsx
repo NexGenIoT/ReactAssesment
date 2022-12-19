@@ -19,6 +19,7 @@ const EmployeeForm = ({ setEmployeeData,employeeData }) => {
   }
   const handleSubmit = async(e)=>{
     e.preventDefault()
+    if(name===''||salary===''||age==='') return window.alert('Please Fill All Details')
     if(!localStorage.getItem('employeeData')){
       localStorage.setItem('employeeData',JSON.stringify([formData]))
     }else{
@@ -33,16 +34,16 @@ const EmployeeForm = ({ setEmployeeData,employeeData }) => {
       <h1>Enter Employee Details </h1>
       <form>
       <label htmlFor='name' >Employee Name:
-      <input type={'text'} placeholder='Enter Name' name='name' value={ name } onChange={ handleInput }  />
+      <input type={'text'} placeholder='Enter Name' name='name' value={ name } onChange={ handleInput } required />
       </label>
       <label htmlFor='salary' >Employee Salary:
-      <input type={'number'} placeholder='Enter Salary' name='salary' value={ salary } onChange={ handleInput }  />
+      <input type={'number'} placeholder='Enter Salary' name='salary' value={ salary } onChange={ handleInput } required />
       </label>
       <label htmlFor='age' >Employee Age:
-      <input type={'number'} placeholder='Enter Age' name='age' value={ age } onChange={ handleInput }  />
+      <input type={'number'} placeholder='Enter Age' name='age' value={ age } onChange={ handleInput } required />
       </label>
       <label htmlFor='profileImg' >Employee Profile:
-      <input type={'file'} placeholder='Upload Profile Picture' name='profileImg' value={ profileImg } onChange={ handleInput }  />
+      <input type={'file'} accept="image/png, image/gif, image/jpeg" placeholder='Upload Profile Picture' name='profileImg' value={ profileImg } onChange={ handleInput }  />
       </label>
       <button type='submit' onClick={ handleSubmit }  >Submit</button>
       </form>
