@@ -4,12 +4,12 @@ const Search = ({ employeeData,setEmployeeData }) => {
   const [search,setSearch] = useState('')
 
   const handleSearch = (e)=>{
-    console.log(e.target.value,'sss')
+    const localData = JSON.parse(localStorage.getItem('employeeData'))
      setSearch(e.target.value)
-     if(JSON.parse(localStorage.getItem('employeeData')).filter(item=>item.name.includes(e.target.value))){
-      setEmployeeData( JSON.parse(localStorage.getItem('employeeData')).filter(item=>item.name.toLowerCase().includes(e.target.value)) )
+     if(localData.filter(item=>item.name.includes(e.target.value))){
+      setEmployeeData( localData.filter(item=>item.name.toLowerCase().includes(e.target.value.toLowerCase())) )
      }else{
-      setEmployeeData(JSON.parse(localStorage.getItem('employeeData')))
+      setEmployeeData(localData)
      }
      
   }
