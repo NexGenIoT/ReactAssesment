@@ -36,13 +36,13 @@ const EmployeeForm = ({ setEmployeeData,employeeData }) => {
       <input type={'text'} placeholder='Enter Name' name='name' value={ name } onChange={ handleInput }  />
       </label>
       <label htmlFor='salary' >Employee Salary:
-      <input type={'number'} placeholder='Enter Name' name='salary' value={ salary } onChange={ handleInput }  />
+      <input type={'number'} placeholder='Enter Salary' name='salary' value={ salary } onChange={ handleInput }  />
       </label>
       <label htmlFor='age' >Employee Age:
-      <input type={'number'} placeholder='Enter Name' name='age' value={ age } onChange={ handleInput }  />
+      <input type={'number'} placeholder='Enter Age' name='age' value={ age } onChange={ handleInput }  />
       </label>
       <label htmlFor='profileImg' >Employee Profile:
-      <input type={'file'} placeholder='Enter Name' name='profileImg' value={ profileImg } onChange={ handleInput }  />
+      <input type={'file'} placeholder='Upload Profile Picture' name='profileImg' value={ profileImg } onChange={ handleInput }  />
       </label>
       <button type='submit' onClick={ handleSubmit }  >Submit</button>
       </form>

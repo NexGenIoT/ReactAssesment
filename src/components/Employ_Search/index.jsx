@@ -7,7 +7,7 @@ const Search = ({ employeeData,setEmployeeData }) => {
     console.log(e.target.value,'sss')
      setSearch(e.target.value)
      if(JSON.parse(localStorage.getItem('employeeData')).filter(item=>item.name.includes(e.target.value))){
-      setEmployeeData( JSON.parse(localStorage.getItem('employeeData')).filter(item=>item.name.includes(e.target.value)) )
+      setEmployeeData( JSON.parse(localStorage.getItem('employeeData')).filter(item=>item.name.toLowerCase().includes(e.target.value)) )
      }else{
       setEmployeeData(JSON.parse(localStorage.getItem('employeeData')))
      }
